@@ -172,7 +172,8 @@ def pregunta_10():
     3   D                  1:2:3:5:5:7
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
-    return
+    a = tbl0
+    return a.groupby('_c1').agg({'_c2': lambda x: sorted(list(x))})
 
 
 def pregunta_11():
@@ -191,7 +192,8 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
-    return
+    a = tbl1
+    return a.groupby('_c0').agg({'_c4': lambda x: sorted(list(x))})
 
 
 def pregunta_12():
@@ -209,7 +211,9 @@ def pregunta_12():
     38   38                    eee:0,fff:9,iii:2
     39   39                    ggg:3,hhh:8,jjj:5
     """
-    return
+    a = tbl2
+    a['_c5'] = a['_c5a'] + ':' + a['_c5b'].astype(str)
+    return a.groupby('_c0').agg({'_c5': lambda x: sorted(x)})
 
 
 def pregunta_13():
