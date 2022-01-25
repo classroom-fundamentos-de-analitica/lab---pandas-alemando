@@ -4,6 +4,6 @@ import pandas as pd
 
 import preguntas
 
-a = preguntas.pregunta_11()
+a = preguntas.pregunta_12()
 
-print(preguntas.pregunta_11().shape == (40, 2))
+print(a)

@@ -218,7 +218,11 @@ def pregunta_12():
     """
     a = tbl2
     a['_c5'] = a['_c5a'] + ':' + a['_c5b'].astype(str)
-    return a.groupby('_c0').agg({'_c5': lambda x: sorted(x)})
+    b = a.groupby('_c0').agg({'_c5': lambda x: sorted(x)})
+    for index, row in b.iterrows():
+        row['_c5'] = ",".join([str(int) for int in row['_c5']])
+    b.insert(0, '_c0', range(0, 40))
+    return b
 
 
 def pregunta_13():
