@@ -8,6 +8,7 @@ Utilice los archivos `tbl0.tsv`, `tbl1.tsv` y `tbl2.tsv`, para resolver las preg
 
 """
 import pandas as pd
+import numpy as np
 
 tbl0 = pd.read_csv("tbl0.tsv", sep="\t")
 tbl1 = pd.read_csv("tbl1.tsv", sep="\t")
@@ -22,7 +23,7 @@ def pregunta_01():
     40
 
     """
-    return
+    return len(tbl0)
 
 
 def pregunta_02():
@@ -33,7 +34,7 @@ def pregunta_02():
     4
 
     """
-    return
+    return tbl0.shape[1]
 
 
 def pregunta_03():
@@ -50,7 +51,7 @@ def pregunta_03():
     Name: _c1, dtype: int64
 
     """
-    return
+    return tbl0['_c1'].value_counts().sort_index(0)
 
 
 def pregunta_04():
@@ -65,7 +66,8 @@ def pregunta_04():
     E    4.785714
     Name: _c2, dtype: float64
     """
-    return
+    a = tbl0[['_c1', '_c2']]
+    return a.groupby('_c1').mean(0)
 
 
 def pregunta_05():
@@ -82,7 +84,8 @@ def pregunta_05():
     E    9
     Name: _c2, dtype: int64
     """
-    return
+    a = tbl0[['_c1', '_c2']]
+    return a.groupby('_c1').max(0)
 
 
 def pregunta_06():
@@ -94,7 +97,8 @@ def pregunta_06():
     ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
     """
-    return
+    a = tbl1['_c4'].unique()
+    return sorted(a)
 
 
 def pregunta_07():
@@ -110,7 +114,8 @@ def pregunta_07():
     E    67
     Name: _c2, dtype: int64
     """
-    return
+    a = tbl0[['_c1', '_c2']]
+    return a.groupby('_c1').sum()
 
 
 def pregunta_08():
@@ -128,7 +133,9 @@ def pregunta_08():
     39   39   E    5  1998-01-26    44
 
     """
-    return
+    a = tbl0
+    a['suma'] = a['_c0'] + a['_c2']
+    return a
 
 
 def pregunta_09():
@@ -146,7 +153,12 @@ def pregunta_09():
     39   39   E    5  1998-01-26  1998
 
     """
-    return
+    a = tbl0
+    a['suma'] = a['_c3'].str[0:4]
+    return a
+
+
+print(pregunta_09())
 
 
 def pregunta_10():
