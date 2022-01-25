@@ -197,6 +197,7 @@ def pregunta_11():
     b = a.groupby('_c0').agg({'_c4': lambda x: sorted(list(x))})
     for index, row in b.iterrows():
         row['_c4'] = ",".join([str(int) for int in row['_c4']])
+    b.insert(0, '_c0', range(0, 40))
     return b
 
 

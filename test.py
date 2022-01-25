@@ -6,4 +6,4 @@ import preguntas
 
 a = preguntas.pregunta_11()
 
-print(a)
+print(preguntas.pregunta_11().shape == (40, 2))
