@@ -152,7 +152,7 @@ def pregunta_09():
 
     """
     a = tbl0
-    a['suma'] = a['_c3'].str[0:4]
+    a['year'] = a['_c3'].str[0:4]
     return a
 
 

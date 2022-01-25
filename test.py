@@ -8,5 +8,11 @@ import preguntas
 
 # print(a)
 
-s = ""
+s = preguntas.pregunta_09().columns.tolist() == [
+    "_c0",
+    "_c1",
+    "_c2",
+    "_c3",
+    "year",
+]
 print(s)
