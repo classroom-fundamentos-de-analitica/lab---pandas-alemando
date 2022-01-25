@@ -34,7 +34,7 @@ def pregunta_02():
     4
 
     """
-    return int(tbl0.shape[1])
+    return tbl0.shape[1]
 
 
 def pregunta_03():
@@ -156,9 +156,6 @@ def pregunta_09():
     a = tbl0
     a['suma'] = a['_c3'].str[0:4]
     return a
-
-
-print(pregunta_09())
 
 
 def pregunta_10():
