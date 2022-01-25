@@ -25,8 +25,7 @@ def test_03():
 
 
 def test_04():
-    assert True
-    preguntas.pregunta_04().equals(
+    assert preguntas.pregunta_04().equals(
         pd.Series(
             {
                 "A": 4.625,
@@ -40,20 +39,17 @@ def test_04():
 
 
 def test_05():
-    assert True
-    preguntas.pregunta_05().equals(
+    assert preguntas.pregunta_05().equals(
         pd.Series({"A": 9, "B": 9, "C": 9, "D": 7, "E": 9})
     )
 
 
 def test_06():
-    assert True
-    preguntas.pregunta_06() == ["A", "B", "C", "D", "E", "F", "G"]
+    assert preguntas.pregunta_06() == ["A", "B", "C", "D", "E", "F", "G"]
 
 
 def test_07():
-    assert True
-    preguntas.pregunta_07().equals(
+    assert preguntas.pregunta_07().equals(
         pd.Series({"A": 37, "B": 36, "C": 27, "D": 23, "E": 67})
     )
 
