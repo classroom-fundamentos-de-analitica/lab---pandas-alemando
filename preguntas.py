@@ -67,7 +67,7 @@ def pregunta_04():
     Name: _c2, dtype: float64
     """
     a = tbl0[['_c1', '_c2']]
-    return a.groupby('_c1').mean(0)
+    return a.groupby('_c1').agg('mean')
 
 
 def pregunta_05():
