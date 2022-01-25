@@ -171,7 +171,10 @@ def pregunta_10():
     4   E  1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
     a = tbl0
-    return a.groupby('_c1').agg({'_c2': lambda x: sorted(list(x))})
+    b = a.groupby('_c1').agg({'_c2': lambda x: sorted(list(x))})
+    for index, row in b.iterrows():
+        row['_c2'] = ":".join([str(int) for int in row['_c2']])
+    return b
 
 
 def pregunta_11():
@@ -191,7 +194,10 @@ def pregunta_11():
     39   39    a,d,f
     """
     a = tbl1
-    return a.groupby('_c0').agg({'_c4': lambda x: sorted(list(x))})
+    b = a.groupby('_c0').agg({'_c4': lambda x: sorted(list(x))})
+    for index, row in b.iterrows():
+        row['_c4'] = ",".join([str(int) for int in row['_c4']])
+    return b
 
 
 def pregunta_12():
